@@ -1,12 +1,15 @@
-function cleanSet(set, startString) {
-  // Filter set values that start with the specified string
-  const filteredValues = Array.from(set).filter((value) => value.startsWith(startString));
+export default function cleanSet(set, startString) {
+  let result = '';
 
-  // Map over filtered values and extract the remaining part of the string
-  const cleanedValues = filteredValues.map((value) => value.slice(startString.length));
+  if (!startString || !startString.length) {
+    return result;
+  }
 
-  // Join the cleaned values with '-'
-  return cleanedValues.join('-');
+  for (const element of set) {
+    if (element && element.startsWith(startString)) {
+      result += `${element.slice(startString.length)}-`;
+    }
+  }
+
+  return result.slice(0, result.length - 1);
 }
-
-export default cleanSet;
