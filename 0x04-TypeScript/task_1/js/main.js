@@ -1,8 +1,19 @@
-// Implement the printTeacher function
-var printTeacher = function (firstName, lastName) {
-    var firstLetter = firstName.charAt(0);
-    return "".concat(firstLetter, ". ").concat(lastName);
-};
+// Implementation of StudentClass
+var Student = /** @class */ (function () {
+    function Student(_a) {
+        var firstName = _a.firstName, lastName = _a.lastName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    Student.prototype.workOnHomework = function () {
+        return 'Currently working';
+    };
+    Student.prototype.displayName = function () {
+        return this.firstName;
+    };
+    return Student;
+}());
 // Example usage
-var result = printTeacher("John", "Doe");
-console.log(result); // Output: J. Doe
+var student1 = new Student({ firstName: 'John', lastName: 'Doe' });
+console.log(student1.displayName()); // Output: John
+console.log(student1.workOnHomework()); // Output: Currently working
