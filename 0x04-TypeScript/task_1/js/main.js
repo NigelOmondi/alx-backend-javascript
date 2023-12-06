@@ -1,8 +1,8 @@
-var director1 = {
-    firstName: 'Mr',
-    lastName: 'Who',
-    location: 'Kenya',
-    fullTimeEmployee: true,
-    numberOfReports: 17,
+// Implement the printTeacher function
+var printTeacher = function (firstName, lastName) {
+    var firstLetter = firstName.charAt(0);
+    return "".concat(firstLetter, ". ").concat(lastName);
 };
-console.log(director1);
+// Example usage
+var result = printTeacher("John", "Doe");
+console.log(result); // Output: J. Doe
